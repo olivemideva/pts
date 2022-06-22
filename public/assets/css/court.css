@@ -180,8 +180,8 @@ html {
     border-bottom: 1px solid #fc6a03;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  }
+/* .styled-table tbody tr:nth-of-type(even) {
+  } */
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid whitesmoke;
