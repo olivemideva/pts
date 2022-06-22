@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+/*login and register pages*/
+.one{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-box{
+    width: 420px;
+    height: 500px;
+    position: relative;
+    margin: 8% auto;
+    background: rgba(235, 231, 231, 0.466);
+    padding: 5px;
+    border-radius: 10%;
+}
+.form-box img{
+    width: 150px;
+    height: 140px;
+    margin: 30px;
+    margin-left: 120px;
+    text-align: center;
+    border-radius: 50%;
+}
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    color: #fc6a03;
+    cursor: pointer;
+}
+.input-group{
+    top: 80px;
+    position: absolute;
+    width: 100%;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-bottom: 1px solid rgb(59, 58, 58);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    background: transparent;
+}
+::placeholder{
+    font-style: rgb(41, 39, 39);
+}
+.submit-btn{
+    width: 45%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto;
+    background: linear-gradient(to right,#fcc59e, #fc6a03);
+    border: 0;
+    outline: none;
+    border-radius: 30%;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Raleway', sans-serif;
+}

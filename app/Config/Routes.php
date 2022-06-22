@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Landing');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -35,7 +35,28 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+//$routes->get('/', 'Home::index');
+
+$routes->get('/', 'Landing::index');
+
+//prison module
+$routes->get('prison_home', 'prison\Prison::index');
+$routes->get('prison_login', 'prison\Login::index');
+$routes->get('prison_logout', 'prison\Login::logout');
+$routes->post('login_prison','prison\Login::login');
+
+//station module
+$routes->get('station_home', 'station\Station::index');
+$routes->get('station_login','station\Login::index');
+$routes->get('station_logout', 'station\Login::logout');
+$routes->post('login_station','station\Login::login');
+
+//court module
+$routes->get('court_home', 'court\Court::index');
+$routes->get('court_login', 'court\Login::index');
+$routes->get('court_logout', 'court\Login::logout');
+$routes->post('login_court','court\Login::login');
+
 
 /*
  * --------------------------------------------------------------------
