@@ -47,8 +47,7 @@ class Login extends BaseController
                     // $check_password = Hash::check($password, $user_info['password']);
         
                     if($password!=$user_info['password']){
-                        session()->setFlashdata('fail', 'Incorrect password');
-                        return redirect()->to('login.php')->withInput();
+                        return redirect()->to('court_login')->with('fail', 'incorrect password!!');
                     }else{
                         if($user_info['role'] == 2){
                             $username = $user_info['first_name'];
@@ -56,7 +55,7 @@ class Login extends BaseController
                             return redirect()->to('court_home');
         
                         }else{
-                            echo "<script>alert('Oooops! Only authorized personell can access this site.')</script>";
+                            return redirect()->to('court_login')->with('fail', 'Oooops! Only authorized personell can access this section!!');
                         }
                     }
                 }

@@ -190,6 +190,16 @@ html {
     font-weight: bold;
     color: whitesmoke;
 }
+i{
+  font-weight: bold;
+  color: whitesmoke;
+  font-size: larger;
+}
+i:hover{
+  font-weight: bold;
+  color: #fc6a03;
+  font-size: x-large;
+}
 
 
 /*CHANGE PASSWORD*/

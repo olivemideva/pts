@@ -4,7 +4,7 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-/*login and register pages*/
+/*login pages*/
 .one{
     height: 100%;
     width: 100%;
@@ -15,9 +15,9 @@
 }
 .form-box{
     width: 420px;
-    height: 500px;
+    height: 600px;
     position: relative;
-    margin: 8% auto;
+    margin: 4% auto;
     background: rgba(235, 231, 231, 0.466);
     padding: 5px;
     border-radius: 10%;
@@ -73,4 +73,12 @@ h1{
     font-weight: 700;
     letter-spacing: 2px;
     font-family: 'Raleway', sans-serif;
+}
+#back{
+    color: #fc6a03;
+    font-size: 70px;
+    margin-left: 50px;
+}
+#back:hover{
+    color: #fcc59e;
 }

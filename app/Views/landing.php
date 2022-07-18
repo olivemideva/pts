@@ -28,7 +28,8 @@
                 <a href="station_login">Station</a>
                 <a href="court_login">Court</a>
                 <a href="prison_login">Prison</a>
-                <a href="#">Parole officer</a>
+                <a href="parole_login">Parole officer</a>
+                <a href="admin_login">Admin</a>
                  </div>
              </div>
 

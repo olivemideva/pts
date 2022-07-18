@@ -43,8 +43,8 @@ html {
   width: 60px;
 }
 #sidebar .brand {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 600;
   height: 56px;
   display: flex;
   align-items: center;
@@ -55,6 +55,7 @@ html {
   z-index: 500;
   padding-bottom: 20px;
   box-sizing: content-box;
+  margin-top: 10px;
   margin-left: 10px;
 }
 #sidebar .brand .bx {
@@ -96,7 +97,7 @@ html {
 }
 #sidebar .side-menu li a.logout {
   color: white;
-  margin-top: 120px;
+  margin-top: 300px;
 }
 #sidebar .side-menu.top li a:hover {
   background: #fc6a03;
@@ -190,6 +191,16 @@ html {
     font-weight: bold;
     color: whitesmoke;
 }
+i{
+  font-weight: bold;
+  color: whitesmoke;
+  font-size: larger;
+}
+i:hover{
+  font-weight: bold;
+  color: #fc6a03;
+  font-size: x-large;
+}
 
 
 /*CHANGE PASSWORD*/
@@ -240,4 +251,3 @@ html {
     border-radius: 4px;
     cursor: default;
   }
-

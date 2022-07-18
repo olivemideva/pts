@@ -6,6 +6,7 @@
 
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/prison.css'); ?>">
 
     <title>PTS</title>
@@ -13,199 +14,46 @@
 <body>
 
 <div class="body">
-    <!-- SIDEBAR -->
-    <section id="sidebar">
-        <a href="#" class="brand">
-            <span class="text">PTS <br>PRISON </span>
-        </a>
-        <ul class="side-menu top">
-            <li>
-                <a href="prison.php">
-                    <i class='bx bxs-user' ></i>
-                    <span class="text">View Profile</span>
-                </a>
-            </li>
-            <li>
-                <a href="change-password.php">
-                    <i class='bx bxs-edit' ></i>
-                    <span class="text">Change Password</span>
-                </a>
-            </li>
-             <li>
-                <a href="view-prisoners.php">
-                    <i class='bx bx-menu' ></i>
-                    <span class="text">View Prisoners</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-star' ></i>
-                    <span class="text">Review Prisoner</span>
-                </a>
-            </li>
-             <li>
-                <a href="#">
-                    <i class='bx bx-plus' ></i>
-                    <span class="text">Recommend for Parole</span>
-                </a>
-            </li>
+<?php include(APPPATH.'Views\prison\templates\sidebar.php'); ?>
 
-        </ul>
-        <ul class="side-menu">
-            <li>
-                <a href="#" class="logout">
-                    <i class='bx bxs-log-out-circle' ></i>
-                    <span class="text">Logout</span>
-                </a>
-            </li>
-        </ul>
-    </section>
-    <!-- SIDEBAR -->
-
-
-
-    <!-- CONTENT -->
-    <section id="content">
-        <!-- NAVBAR -->
-        <nav>
-            <i class='bx bx-menu' ></i>
-            <a href="#" class="nav-link">DASHBOARD</a>
-        <!-- NAVBAR -->
-
-        
-    </section>
-   <div class="styled-table">
+<div class="styled-table">
         <table class="styled-table">
     <thead>
         <tr>
             <th>ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
+            <th>Gender</th>
             <th>Arrested For</th>
             <th>Admission Date</th>
             <th>Cell no</th>
-            <th>ADD INFO</th>
+            <th>REVIEW</th>
+            <th>MORE</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>ST1</td>
-            <td>Wachira</td>
-            <td>Dominic</td>
-            <td>Stealing chickens</td>
-            <td>15-07-2017</td>
-            <td>Cell 78</td>
-            <td><a href="#"><i class='glyphicon glyphicon-edit' style="color: #ffffff;" ></i></a></td>
-        </tr>
-        <tr>
-            <td>ST1</td>
-            <td>Wachira</td>
-            <td>Dominic</td>
-            <td>Stealing chickens</td>
-            <td>15-07-2017</td>
-            <td>Cell 78</td>
-            <td><a href="#"><i class='glyphicon glyphicon-edit' style="color: #ffffff;" ></i></a></td>
-        </tr><tr>
-            <td>ST1</td>
-            <td>Wachira</td>
-            <td>Dominic</td>
-            <td>Stealing chickens</td>
-            <td>15-07-2017</td>
-            <td>Cell 78</td>
-            <td><a href="#"><i class='glyphicon glyphicon-edit' style="color: #ffffff;" ></i></a></td>
-        </tr><tr>
-            <td>ST1</td>
-            <td>Wachira</td>
-            <td>Dominic</td>
-            <td>Stealing chickens</td>
-            <td>15-07-2017</td>
-            <td>Cell 78</td>
-            <td><a href="#"><i class='glyphicon glyphicon-edit' style="color: #ffffff;" ></i></a></td>
-        </tr><tr>
-            <td>ST1</td>
-            <td>Wachira</td>
-            <td>Dominic</td>
-            <td>Stealing chickens</td>
-            <td>15-07-2017</td>
-            <td>Cell 78</td>
-            <td><a href="#"><i class='glyphicon glyphicon-edit' style="color: #ffffff;" ></i></a></td>
-        </tr><tr>
-            <td>ST1</td>
-            <td>Wachira</td>
-            <td>Dominic</td>
-            <td>Stealing chickens</td>
-            <td>15-07-2017</td>
-            <td>Cell 78</td>
-            <td><a href="#"><i class='glyphicon glyphicon-edit' style="color: #ffffff;" ></i></a></td>
-        </tr>   
+    <?php
+        
+        if($prisoners){
+            foreach($prisoners as $prisoner){
+                echo '<tr>
+                <td>'.$prisoner["prisoner_id"].'</td>
+                <td>'.$prisoner["first_name"].'</td>
+                <td>'.$prisoner["last_name"].'</td>
+                <td>'.$prisoner["gender"].'</td>
+                <td>'.$prisoner["arrested_for"].'</td>
+                <td>'.$prisoner["admitted_on"].'</td>
+                <td>'.$prisoner["cell_no"].'</td>
+                <td><a href="'.base_url('Rfetch_prisoner/' .$prisoner["prisoner_id"]).'"><i class="bx bxs-star"></i></a></td>
+                <td><a href="'.base_url('charts/' .$prisoner["prisoner_id"]).'"><i class="las la-eye"></i></a></td>
+                </tr>';
+            }
+        }
+
+        ?>   
     </tbody>
 </table>
     </div>
-</div>
-    <script>
-        const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-
-allSideMenu.forEach(item=> {
-    const li = item.parentElement;
-
-    item.addEventListener('click', function () {
-        allSideMenu.forEach(i=> {
-            i.parentElement.classList.remove('active');
-        })
-        li.classList.add('active');
-    })
-});
-
-// TOGGLE SIDEBAR
-const menuBar = document.querySelector('#content nav .bx.bx-menu');
-const sidebar = document.getElementById('sidebar');
-
-menuBar.addEventListener('click', function () {
-    sidebar.classList.toggle('hide');
-})
-
-
-const searchButton = document.querySelector('#content nav form .form-input button');
-const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
-const searchForm = document.querySelector('#content nav form');
-
-searchButton.addEventListener('click', function (e) {
-    if(window.innerWidth < 576) {
-        e.preventDefault();
-        searchForm.classList.toggle('show');
-        if(searchForm.classList.contains('show')) {
-            searchButtonIcon.classList.replace('bx-search', 'bx-x');
-        } else {
-            searchButtonIcon.classList.replace('bx-x', 'bx-search');
-        }
-    }
-})
-
-
-if(window.innerWidth < 768) {
-    sidebar.classList.add('hide');
-} else if(window.innerWidth > 576) {
-    searchButtonIcon.classList.replace('bx-x', 'bx-search');
-    searchForm.classList.remove('show');
-}
-
-
-window.addEventListener('resize', function () {
-    if(this.innerWidth > 576) {
-        searchButtonIcon.classList.replace('bx-x', 'bx-search');
-        searchForm.classList.remove('show');
-    }
-})
-
-const switchMode = document.getElementById('switch-mode');
-
-switchMode.addEventListener('change', function () {
-    if(this.checked) {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
-})
-    </script>
+    </div>
 </body>
 </html>

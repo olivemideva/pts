@@ -23,10 +23,11 @@
 	position: relative;
 	width: 150%;
 	height: 60px;
-	margin: 40px 271px 10px;
-	margin-left: 550px;
+	margin: 0px 271px 10px;
+	margin-left: 350px;
+	margin-top: 50px;
 	font-family: "Times New Roman", Times, serif;
-	font-size: 39px;
+	font-size: 37px;
 
 }
 .nav h1{
@@ -36,8 +37,8 @@
 	text-align:left;
     position:  left;
 	margin-top: 20px;
-	margin-left: 420px;
-	font-size: 43px;
+	margin-left: 207px;
+	font-size: 39px;
 	font-family: "Times New Roman", Times, serif;;
 }
 .nav h3{
@@ -47,8 +48,8 @@
 	text-align:left;
     position:  left;
 	margin-top: 0px;
-	margin-left: 469px;
-	font-size: 43px;
+	margin-left: 265px;
+	font-size: 39px;
 	font-family: "Times New Roman", Times, serif;;
 }
 
@@ -158,7 +159,7 @@ li {
 .footer1{
 	font-size: 18px;
 	margin-left: 100px;
-	margin-top: 512px;
+	margin-top: 302px;
 }
 .footer-content i{
 	color: #fc6a03;
@@ -166,12 +167,12 @@ li {
 .footer2{
 	font-size: 18px;
 	margin-top: -17px;
-	margin-left: 838px;
+	margin-left: 698px;
 }
 .footer3{
 	font-size: 18px;
 	margin-top: -17px;
-	margin-left:1492px;
+	margin-left:1222px;
 }
 
 
