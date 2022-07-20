@@ -14,8 +14,8 @@
 <body>
 
 <div class="body">
-<?php include(APPPATH.'Views\parole\templates\sidebar.php'); ?> 
-<h2 class="heading">RELEASED PRISONERS</h2>
+<?php include(APPPATH.'Views\prison\templates\sidebar.php'); ?>
+<h2 class="heading">RECOMMENDED FOR PAROLE</h2>
      <div class="styled-table">
         <table class="styled-table">
     <thead>
@@ -24,22 +24,22 @@
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Gender</th>
-            <th>Release date</th>
-            <th>Parole officer</th>
+            <th>Arrested For</th>
+            <th>Sentence</th>
         </tr>
     </thead>
     <tbody>
     <?php
         
-        if($approved){
-            foreach($approved as $prisoner){
+        if($suggested){
+            foreach($suggested as $prisoner){
                 echo '<tr>
                 <td>'.$prisoner["prisoner_id"].'</td>
                 <td>'.$prisoner["first_name"].'</td>
                 <td>'.$prisoner["last_name"].'</td>
                 <td>'.$prisoner["gender"].'</td>
-                <td>'.$prisoner["released_on"].'</td>
-                <td>'.$prisoner["first_name_u"]. '  ' .$prisoner["last_name_u"].'</td>
+                <td>'.$prisoner["arrested_for"].'</td>
+                <td>'.$prisoner["sentence"].'</td>
                 </tr>';
             }
         }

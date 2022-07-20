@@ -4,12 +4,12 @@
             <span class="text">PTS <br>PRISON </span>
         </a>
         <ul class="side-menu top">
-            <li>
+            <!-- <li>
                 <a href="prison_home">
                     <i class='bx bxs-user' ></i>
                     <span class="text">View Profile</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="change_passwordp">
                     <i class='bx bxs-edit' ></i>
@@ -29,7 +29,7 @@
                 </a>
             </li>
              <li>
-                <a href="#">
+                <a href="recommended">
                     <i class='bx bx-plus' ></i>
                     <span class="text">Recommended for Parole</span>
                 </a>

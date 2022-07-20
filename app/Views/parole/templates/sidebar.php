@@ -4,12 +4,12 @@
             <span class="text">PTS <br> PAROLE </span>
         </a>
         <ul class="side-menu top">
-            <li>
+            <!-- <li>
                 <a href="parole_home">
                     <i class='bx bxs-chart' ></i>
                     <span class="text">View Statistics</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="suggested">
                     <i class='bx bxs-edit' ></i>

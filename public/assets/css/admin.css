@@ -83,7 +83,7 @@ html {
   align-items: center;
   border-radius: 48px;
   font-size: 16px;
-  color: white;
+  color: black;
   white-space: nowrap;
   overflow-x: hidden;
 }
@@ -95,11 +95,12 @@ html {
   transition: width .3s ease;
 }
 #sidebar .side-menu li a.logout {
-  color: white;
+  color: black;
   margin-top: 190px;
 }
 #sidebar .side-menu.top li a:hover {
   background: #fc6a03;
+  color: whitesmoke;
 }
 #sidebar .side-menu li a .bx {
   min-width: calc(60px  - ((4px + 6px) * 2));
@@ -143,11 +144,11 @@ html {
   box-shadow: -20px -20px 0 var(--light);
 }
 #content nav a {
-  color: white;
+  color: black;
 }
 #content nav .bx.bx-menu {
   cursor: pointer;
-  color: white;
+  color: black;
 }
 #content nav .nav-link {
   font-size: 16px;
@@ -162,10 +163,11 @@ html {
 .styled-table {
     border-collapse: collapse;
     margin-left: 145px;
-    margin-top: 72px;
+    margin-top: 30px;
     font-size: 14px;
     font-family: sans-serif;
     min-width: 400px;
+    width: 1100px;
 }
 .styled-table thead tr {
     color: whitesmoke;
@@ -180,15 +182,19 @@ html {
     border-bottom: 1px solid #fc6a03;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  }
+.heading{
+  margin-top: 30px;
+  margin-left: 300px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid whitesmoke;
+    border-bottom: 2px solid black;
 }
 .styled-table tbody tr {
     font-weight: bold;
-    color: whitesmoke;
+    color: black;
 }
 
 
@@ -212,12 +218,12 @@ html {
   font-weight: 600;
   margin-left: -70px;
   margin-top: -150px;
-  color: whitesmoke;
+  color: black;
   font-size: 18px;
 }
 .inputLabel {
   font-size: 15px;
-  color: whitesmoke;
+  color: black;
   margin-bottom: 6px;
   margin-top: 12px;
 }
@@ -230,7 +236,7 @@ html {
   }
 
 .buttonWrapper {
-  color: whitesmoke;
+  color: black;
   margin-top: 40px;
   margin-left: -170px;
     width: 30%;

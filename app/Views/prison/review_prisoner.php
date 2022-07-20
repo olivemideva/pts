@@ -69,6 +69,13 @@
             <input type="number" max="10" step=".1" id="social_interaction" class="form-input" placeholder="Social interaction review out of 10" name="social_interaction"/>
           </div>
         </div>
+        <!-- <div class="horizontal-group">
+
+          <label class="label-title">Do you recommend prisoner for parole? *:</label>
+        <label for="improvement"><input type="radio" name="recommend" value="1" id="improvement"> Recommended</label>
+        <label for="no_improvement"><input type="radio" name="recommend" value="0" id="no_improvement"> Not Recommended</label>
+
+        </div> -->
 
         <div class="form-footer">
         <span>* required</span>

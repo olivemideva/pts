@@ -16,9 +16,25 @@ class Parole extends BaseController
     }
     public function approved()
     {
+        $detainee = new \App\Models\detaineeModel();
+        $punishment = new \App\Models\punishmentModel();
         $prisoner = new \App\Models\prisonerModel();
+        $released = new \App\Models\releaseModel();
+        $user = new \App\Models\userModel(); 
         
-        $data['approved']= json_decode(json_encode($prisoner->whereIn('is_released', [1])->paginate(10)),true);
+        $data['approved']= json_decode(json_encode($released
+        ->whereIn('is_released', [1])
+        ->join('prisoners','prisoners.prisoner_id=released.prisoner')
+        ->join('users','users.user_id=released.parole_officer')
+        ->paginate(10)),true);
+
+        // $data['approved']= json_decode(json_encode($released
+        // ->whereIn('is_released', [1])
+        // ->join('prisoners','prisoners.prisoner_id=prisoner')
+        // ->join('users','users.user_id=.parole_officer')
+        // ->paginate(10)),true);
+
+        //echo print_r($data);
 
         return view('parole/approved', $data);
     }
@@ -27,7 +43,7 @@ class Parole extends BaseController
         $prisoner = new \App\Models\prisonerModel();
         $punishment = new \App\Models\punishmentModel();
         
-        $data['suggested']= json_decode(json_encode($punishment->join('prisoners', 'prisoners.defendant_id=defendant')->whereIn('is_recommended', [1], 'punishment', [2])->paginate(10)),true);
+        $data['suggested']= json_decode(json_encode($punishment->join('prisoners', 'prisoners.defendant_id=defendant')->whereIn('is_recommended', [1], 'is_relesed', [0])->paginate(10)),true);
 
         return view('parole/suggested', $data);
     }
@@ -70,50 +86,41 @@ class Parole extends BaseController
         $prisoner = new \App\Models\prisonerModel();
 
         $decision = $this->request->getPost('decision');
+        $recommend = $this->request->getPost('recommend');
         $id = $this->request->getPost('prisoner_id');
     
         $data = [
             'is_released'=>$decision,
+            'is_recommended'=>$recommend,
         ];
 
         $query = $prisoner->update($id, $data);
-        
-        if($decision == 1 ){    
-            $id = $this->request->getPost('prisoner_id');
+
+        if($query){
+
+            if($decision==1){
+            $parole_officer = $this->request->getPost('parole_officer');
     
             $data = [
-                'is_released'=>$decision,
+                'parole_officer'=>$parole_officer,
+                'prisoner'=>$id,
             ];
-    
-            $query = $prisoner->update($id, $data);
-    
-            if($query){
-    
-                $parole_officer = $this->request->getPost('parole_officer');
-        
-                $values = [
-                    'parole_officer'=>$parole_officer,
-                    'prisoner'=>$prisoner,
-                ];
-        
-                $new_query = $released->insert($values);
-    
-                if($new_query){
-                return redirect()->to('suggested')->with('success', 'You have approved parole successfully');
-                }
+            $query = $released->insert($data);
             }
-        }else{
-            $id = $this->request->getPost('prisoner_id');
-    
-            $data = [
-                'is_reccomended'=>0,
-            ];
-    
-            $query = $prisoner->update($id, $data);
-    
-            if($query){
-                return redirect()->to('suggested')->with('fail', 'You have denied parole');
-            }
+
+            return redirect()->to('suggested')->with('success', 'Your response has been recorded');
         }
+
+    }
+    public function fetch_response($id)
+    {
+        $detainee = new \App\Models\detaineeModel();
+        $punishment = new \App\Models\punishmentModel();
+        $prisoner = new \App\Models\prisonerModel();
+
+        $data['prisoner'] = $prisoner->where('prisoner_id' , $id)->first();
+
+        //echo print_r($data);
+        return view('parole/response', $data);
     }
 }

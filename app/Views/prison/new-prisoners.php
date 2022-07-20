@@ -14,7 +14,7 @@
 
 <div class="body">
 <?php include(APPPATH.'Views\prison\templates\sidebar.php'); ?>
-
+<h2 class="heading">NEW PRISONERS</h2>
 <div class="styled-table">
         <table class="styled-table">
     <thead>

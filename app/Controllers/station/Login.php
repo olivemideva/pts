@@ -50,9 +50,9 @@ class Login extends BaseController
                         return redirect()->to('station_login')->with('fail', 'Incorrect password!!');
                     }else{
                         if($user_info['role'] == 3){
-                            $username = $user_info['first_name'];
+                            $username = $user_info['user_id'];
                             session()->set('loggedUser', $username);
-                            return redirect()->to('station_home');
+                            return redirect()->to('view_detainees');
         
                         }else{
                             return redirect()->to('station_login')->with('fail', 'Oooops! Only authorized personell can access this section!!');

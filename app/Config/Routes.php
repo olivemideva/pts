@@ -46,13 +46,16 @@ $routes->get('new_prisoners', 'prison\Prison::new_prisoners');
 $routes->get('change_passwordp', 'prison\Prison::change_password');
 $routes->get('prison_login', 'prison\Login::index');
 $routes->get('prison_logout', 'prison\Login::logout');
+$routes->get('recommended', 'prison\Prison::suggested');
 $routes->get('fetch_prisoner/(:num)', 'prison\Prison::fetch_prisoner/$1');
 $routes->get('Rfetch_prisoner/(:num)', 'prison\Prison::Rfetch_prisoner/$1');
+$routes->get('show_recommend/(:num)', 'prison\Prison::show_recommend/$1');
 //$routes->get('more_info/(:num)', 'prison\Prison::Mfetch_prisoner/$1');
 $routes->get('charts/(:num)', 'prison\Prison::charts/$1');
 $routes->post('prison_addinfo', 'prison\Prison::add_info');
 $routes->post('prisoner_review', 'prison\Prison::prisoner_review');
 $routes->post('recommend', 'prison\Prison::recommend');
+//$routes->get('recommend/(:num)', 'prison\Prison::recommend/$1');
 $routes->post('login_prison','prison\Login::login');
 
 //station module
@@ -92,6 +95,8 @@ $routes->get('approved', 'parole\Parole::approved');
 $routes->get('parole_login', 'parole\Login::index');
 $routes->get('parole_logout', 'parole\Login::logout');
 $routes->get('fetch_recommended/(:num)', 'parole\Parole::charts/$1');
+$routes->get('fetch_response/(:num)', 'parole\Parole::fetch_response/$1');
+$routes->post('response', 'parole\Parole::response');
 $routes->post('decision','parole\Parole::decision');
 $routes->post('login_parole','parole\Login::login');
 

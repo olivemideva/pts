@@ -52,7 +52,7 @@ class Login extends BaseController
                         if($user_info['role'] == 4){
                             $user = $user_info['user_id'];
                             session()->set('loggedUser', $user);
-                            return redirect()->to('parole_home');
+                            return redirect()->to('suggested');
         
                         }else{
                             return redirect()->to('parole_login')->with('fail', 'Oooops! Only authorized personell can access this section!!');

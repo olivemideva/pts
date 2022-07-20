@@ -4,12 +4,12 @@
             <span class="text">PTS <br>STATION </span>
         </a>
         <ul class="side-menu top">
-            <li>
+            <!-- <li>
                 <a href="station_home">
                     <i class='bx bxs-user' ></i>
                     <span class="text">View Profile</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="change_passwordst">
                     <i class='bx bxs-edit' ></i>

@@ -3,6 +3,7 @@
 namespace App\Controllers\admin;
 use App\Controllers\BaseController;
 use App\Models\userModel;
+use App\Models\roleModel;
 
 class Admin extends BaseController
 {
@@ -21,8 +22,9 @@ class Admin extends BaseController
     public function manage_users()
     {
         $userModel = new \App\Models\userModel();
+        $role = new \App\Models\roleModel();
 
-        $data['users'] = $userModel->orderBy('user_id', 'DESC')->paginate(10);
+        $data['users'] = json_decode(json_encode($role->join('users', 'users.role=role_id')->paginate(10)),true);
 
         $data['pagination_link'] = $userModel->pager;
 
@@ -130,13 +132,13 @@ class Admin extends BaseController
             $password = $this->generate_password($str, 15);
         
             $values = [
-                'first_name'=>$firstname,
-                'last_name'=>$lastname,
+                'first_name_u'=>$firstname,
+                'last_name_u'=>$lastname,
                 'other_name'=>$othername,
                 'email'=>$email,
                 'national_id'=>$national_id,
                 'mobile'=>$mobile,
-                'gender'=>$gender,
+                'gender_u'=>$gender,
                 'role'=>$role,
                 'password'=>$password,
             ];

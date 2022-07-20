@@ -50,9 +50,9 @@ class Login extends BaseController
                         return redirect()->to('admin_login')->with('fail', 'incorrect password!!');
                     }else{
                         if($user_info['role'] == 0){
-                            $username = $user_info['first_name'];
+                            $username = $user_info['user_id'];
                             session()->set('loggedUser', $username);
-                            return redirect()->to('admin_home');
+                            return redirect()->to('manage_users');
         
                         }else{
                             return redirect()->to('admin_login')->with('fail', 'Oooops! Only authorized personell can access this section!!');

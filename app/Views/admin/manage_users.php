@@ -14,9 +14,10 @@
 
 <div class="body">
 <?php include(APPPATH.'Views\admin\templates\sidebar.php'); ?>
-
+<h2 class="heading">USERS</h2>
     <div class="styled-table">
               <table class="styled-table">
+
     <thead>
         <tr>
             <th>ID</th>
@@ -27,7 +28,6 @@
             <th>National ID</th>
             <th>Phone Number</th>
             <th>Role</th>
-            <th>View</th>
         </tr>
     </thead>
     <tbody>
@@ -37,14 +37,13 @@
             foreach($users as $user){
                 echo '<tr>
                 <td>'.$user["user_id"].'</td>
-                <td>'.$user["first_name"].'</td>
-                <td>'.$user["last_name"].'</td>
+                <td>'.$user["first_name_u"].'</td>
+                <td>'.$user["last_name_u"].'</td>
                 <td>'.$user["other_name"].'</td>
                 <td>'.$user["email"].'</td>
                 <td>'.$user["national_id"].'</td>
-                <td>'.$user["mobile"].'</td>
-                <td>'.$user["role"].'</td>
-                <td><a href="#"><i class="fa fa-eye "></i></a></td>
+                <td>0'.$user["mobile"].'</td>
+                <td>'.$user["roles"].'</td>
                 </tr>';
             }
         }

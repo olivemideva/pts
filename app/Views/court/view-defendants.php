@@ -14,7 +14,7 @@
 <body>
     <div class="body">
 <?php include(APPPATH.'Views\court\templates\sidebar.php'); ?>
-
+<h2 class="heading">DEFENDANTS</h2>
 <div class="styled-table">
         <table class="styled-table">
     <thead>

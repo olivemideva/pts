@@ -4,12 +4,12 @@
             <span class="text">PTS <br>ADMIN</span>
         </a>
         <ul class="side-menu top">
-            <li>
-                <a href="#">
-                    <i class='bx bxs-user' ></i>
-                    <span class="text">View Profile</span>
+            <!-- <li>
+                <a href="admin_home">
+                <i class='bx bxs-chart' ></i>
+                    <span class="text">View Statistics</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="change_passworda">
                     <i class='bx bxs-edit' ></i>

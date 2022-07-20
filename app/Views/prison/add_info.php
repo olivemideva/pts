@@ -46,7 +46,7 @@
           </div>
           <div class="form-group right">
           <label for="gender" class="label-title">Prisoner's Gender *</label>
-            <input type="text" id="cause" class="form-input" placeholder="Gender" name="gender" value="<?php echo $info_prisoner['gender'] ?>" readonly/>
+            <input type="text" id="gender" class="form-input" placeholder="Gender" name="gender" value="<?php echo $info_prisoner['gender'] ?>" readonly/>
           </div>
         </div>
         <div class="horizontal-group">

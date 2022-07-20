@@ -38,9 +38,8 @@
 <div class="body">
 <a href="<?= base_url('view_prisoners'); ?>"><span class="las la-arrow-circle-left" id="back"></span></a>
 
-<form class="add-form" method="POST" action="<?= base_url('recommend'); ?>">
+<form class="add-form" method="POST" action="<?= base_url('#'); ?>">
    <?= csrf_field(); ?>
-   <input type="hidden" value="<?= $prisoner ?>" name="prisoner">
       <!-- form header -->
       <div class="form-header">
       </div>
@@ -50,12 +49,9 @@
 
           <div id="chart_div" style="height: 400px; width: 100%"></div>
 
-        <div class="form-footer">
-        <button type="submit" class="btn">Recommend for parole</button>
-      </div>
+</form>
 
       </div>    
-      </form>
 
 </body>
 <!-- Load chart library-->

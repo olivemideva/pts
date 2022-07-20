@@ -38,7 +38,7 @@
 <div class="body">
 <a href="<?= base_url('suggested'); ?>"><span class="las la-arrow-circle-left" id="back"></span></a>
 
-<form class="add-form" method="POST" action="<?= base_url('decision'); ?>">
+<form class="add-form" method="POST" action="<?= base_url('#'); ?>">
    <?= csrf_field(); ?>
    <input type="hidden" value="<?= $prisoner ?>" name="prisoner_id">
    <?php 
@@ -58,16 +58,6 @@
 
           <div id="chart_div" style="height: 400px; width: 100%"></div>
 
-        <div class="form-footer">
-        <label class="label-title" for="gender"> Approve or Deny request</label>
-        <select name="decision">
-            <option value="none" selected>SELECT</option>
-            <option value="1">Approve</option>
-            <option value="0">Deny</option>
-        </select>
-
-        <button type="submit" class="btn">Finish</button>
-      </div>
 
       </div>    
       </form>
