@@ -19,12 +19,23 @@ class Admin extends BaseController
     {
         return view('admin/change-password');
     }
+    public function suspended_users()
+    {
+        $userModel = new \App\Models\userModel();
+        $role = new \App\Models\roleModel();
+
+        $data['users'] = json_decode(json_encode($role->join('users', 'users.role=role_id')->orderBy('user_id', 'DESC')->whereIn('is_deleted', [1])->paginate(15)),true);
+
+        $data['pagination_link'] = $userModel->pager;
+
+        return view('admin/suspended_users', $data);
+    }
     public function manage_users()
     {
         $userModel = new \App\Models\userModel();
         $role = new \App\Models\roleModel();
 
-        $data['users'] = json_decode(json_encode($role->join('users', 'users.role=role_id')->paginate(10)),true);
+        $data['users'] = json_decode(json_encode($role->join('users', 'users.role=role_id')->orderBy('user_id', 'DESC')->whereIn('is_deleted', [0])->paginate(15)),true);
 
         $data['pagination_link'] = $userModel->pager;
 
@@ -152,6 +163,27 @@ class Admin extends BaseController
             }
         }          
 
+    }
+    public function delete_user($id)
+    {
+        $user = new \App\Models\userModel();
+
+        $deleted=1;
+
+        $data = [
+            'is_deleted'=>$deleted,
+        ];
+
+        $user->where('user_id', $id)->update($id,$data);
+
+        $session = \Config\Services::session();
+
+        if(!$session){
+            return redirect()->back()->with('fail', 'Something went wrong');
+            // return redirect()->to('register')->with('fail', 'Something went wrong');
+        }else{
+            return redirect()->to('manage_users')->with('success', 'User deleted successfully');
+        }
     }
    
 }

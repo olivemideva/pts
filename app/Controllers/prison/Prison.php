@@ -23,11 +23,10 @@ class Prison extends BaseController
         $data['prisoners']=json_decode(json_encode($punishment
         ->whereIn('punishments.punishment', [2])
         ->whereIn('prisoners.is_released',[0])
-        ->whereIn('prisoners.is_recommended',[0])
         ->whereIn('detainees.is_admitted', [1])
         ->join('prisoners','prisoners.defendant_id=punishments.defendant')
         ->join('detainees','detainees.detainee_id=punishments.defendant')
-        ->paginate(10)),true);
+        ->paginate(15)),true);
 
         return view('prison/view-prisoners', $data);
     }
@@ -41,7 +40,7 @@ class Prison extends BaseController
         ->whereIn('detainees.is_admitted', [0])
         ->whereIn('punishments.punishment', [2])
         ->join('detainees', 'detainees.detainee_id=defendant')
-        ->paginate(10)),true);
+        ->paginate(15)),true);
 
         //$data['new_prisoner']=json_decode(json_encode($punishment
         //->whereIn('punishments.punishment',[2], 'detainees.is_admitted', [0])
@@ -246,7 +245,7 @@ class Prison extends BaseController
         ->join('prisoners','prisoners.defendant_id=punishments.defendant')
         ->join('detainees','detainees.detainee_id=punishments.defendant')
         ->whereIn('is_recommended', [1], 'is_relesed', [0])
-        ->paginate(10)),true);
+        ->paginate(15)),true);
 
         return view('prison/suggested', $data);
     }

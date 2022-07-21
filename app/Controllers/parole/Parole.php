@@ -26,7 +26,7 @@ class Parole extends BaseController
         ->whereIn('is_released', [1])
         ->join('prisoners','prisoners.prisoner_id=released.prisoner')
         ->join('users','users.user_id=released.parole_officer')
-        ->paginate(10)),true);
+        ->paginate(15)),true);
 
         // $data['approved']= json_decode(json_encode($released
         // ->whereIn('is_released', [1])
@@ -43,7 +43,7 @@ class Parole extends BaseController
         $prisoner = new \App\Models\prisonerModel();
         $punishment = new \App\Models\punishmentModel();
         
-        $data['suggested']= json_decode(json_encode($punishment->join('prisoners', 'prisoners.defendant_id=defendant')->whereIn('is_recommended', [1], 'is_relesed', [0])->paginate(10)),true);
+        $data['suggested']= json_decode(json_encode($punishment->join('prisoners', 'prisoners.defendant_id=defendant')->whereIn('is_recommended', [1], 'is_relesed', [0])->paginate(15)),true);
 
         return view('parole/suggested', $data);
     }

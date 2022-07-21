@@ -18,7 +18,7 @@ class Court extends BaseController
     {
         $detaineeModel = new \App\Models\detaineeModel();
 
-        $data['detainees'] = $detaineeModel->orderBy('detainee_id', 'DESC')->where('is_guilty', 2)->paginate(10);
+        $data['detainees'] = $detaineeModel->orderBy('detainee_id', 'DESC')->where('is_guilty', 2)->paginate(15);
 
         $data['pagination_link'] = $detaineeModel->pager;
 

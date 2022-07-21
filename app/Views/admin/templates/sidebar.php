@@ -28,6 +28,12 @@
                     <span class="text">Manage users</span>
                 </a>
             </li>
+            <li>
+                <a href="suspended_users">
+                    <i class='bx bx-trash' ></i>
+                    <span class="text">Suspended users</span>
+                </a>
+            </li>
         </ul>
         <ul class="side-menu">
             <li>

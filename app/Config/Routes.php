@@ -83,10 +83,12 @@ $routes->get('admin_home', 'admin\Admin::index');
 $routes->get('user_registration', 'admin\Admin::user_reg');
 $routes->get('change_passworda', 'admin\Admin::change_password');
 $routes->get('manage_users', 'admin\Admin::manage_users');
+$routes->get('suspended_users', 'admin\Admin::suspended_users');
 $routes->get('admin_login', 'admin\Login::index');
 $routes->get('admin_logout', 'admin\Login::logout');
 $routes->post('login_admin','admin\Login::login');
 $routes->post('add_user','admin\Admin::add_user');
+$routes->get('delete_user/(:num)', 'admin\Admin::delete_user/$1');
 
 //parole module
 $routes->get('parole_home', 'parole\Parole::index');

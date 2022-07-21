@@ -18,7 +18,7 @@
    font-size:17px;
    border:none;
    border-radius:5px;
-   color:#bcf5e7;
+   color: white;
    cursor:pointer;
 }
 

@@ -39,7 +39,7 @@
         <div class="horizontal-group">
           <div class="form-group left">
             <label for="date" class="label-title">Detainee's Arrested on *</label>
-            <input type="date" id="date" class="form-input" placeholder="Enter arrest date" name="arrested_on" value="<?= set_value('arrested_on'); ?>"/>
+            <input type="date" id="date" class="form-input" placeholder="Enter arrest date" name="arrested_on" min="2022-07-20" max="2022-07-21" value="<?= set_value('arrested_on'); ?>"/>
           </div>
           <div class="form-group right">
             <label for="time" class="label-title">Detainee's Arrest time *</label>

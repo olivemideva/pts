@@ -56,7 +56,7 @@
           </div>
           <div class="form-group right">
           <label for="date" class="label-title">Prisoner was Admitted on *</label>
-            <input type="date" id="date" class="form-input" placeholder="Enter admission date" name="admitted_on"/>
+            <input type="date" id="date"  min="2022-07-20" max="2022-07-21" class="form-input" placeholder="Enter admission date" name="admitted_on"/>
           </div>
         </div>
 

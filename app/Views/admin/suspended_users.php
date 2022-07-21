@@ -28,7 +28,6 @@
             <th>National ID</th>
             <th>Phone Number</th>
             <th>Role</th>
-            <th>ACTION</th>
         </tr>
     </thead>
     <tbody>
@@ -45,7 +44,6 @@
                 <td>'.$user["national_id"].'</td>
                 <td>0'.$user["mobile"].'</td>
                 <td>'.$user["roles"].'</td>
-                <td><button type="button" onclick="delete_data('.$user["user_id"].')" class = "btn btn-danger">Suspend</button></td>
                 </tr>';
             }
         }
